@@ -86,6 +86,7 @@ def calcular_total(pedido):
 
     for producto in pedido.pedido_productos:
         producto_dict = {
+            'id_pedido': pedido.id_pedido, # Agrega el id_pedido correspondiente
             'id_producto': producto.id_producto,
             'nombre': producto.nombre,
             'precio': producto.precio,
@@ -104,7 +105,6 @@ def calcular_total(pedido):
         total=total
     )
     return factura
-
 def obtener_todos_los_pedidos():
     productos = []
     pedidos_lista = []
