@@ -9,22 +9,22 @@ const CreateOrder = ({onClose}) => {
   });
 ;
   const [tacoType, setTacoType] = useState('beef');
-  const [tacoQuantity, setTacoQuantity] = useState(1);
-  const [tacoToGo, setTacoToGo] = useState(false);
+  const [tacocantidad, setTacocantidad] = useState(1);
+  const [tacopara_llevar, setTacopara_llevar] = useState(false);
 
   const handleOrderSubmit = () => {
-    console.log('Order submitted:', tacoType, tacoQuantity, tacoToGo);
+    console.log('Order submitted:', tacoType, tacocantidad, tacopara_llevar);
     onClose();
   };
 
   const handleTacoTypeChange = (event) => {
     setTacoType(event.target.value);
   };
-  const handleTacoQuantityChange = (event) => {
-    setTacoQuantity(parseInt(event.target.value));
+  const handleTacocantidadChange = (event) => {
+    setTacocantidad(parseInt(event.target.value));
   };
-  const handleToGoChange = (event) => {
-    setTacoToGo(event.target.checked);
+  const handlepara_llevarChange = (event) => {
+    setTacopara_llevar(event.target.checked);
   };
   return (
     <div className="modal" ref={wrapperRef}>
@@ -43,18 +43,18 @@ const CreateOrder = ({onClose}) => {
           </select>
         </div>
         <div>
-          <label htmlFor="taco-quantity">Quantity:</label>
+          <label htmlFor="taco-cantidad">cantidad:</label>
           <input
-            id="taco-quantity"
+            id="taco-cantidad"
             type="number"
             min="1"
-            value={tacoQuantity}
-            onChange={handleTacoQuantityChange}
+            value={tacocantidad}
+            onChange={handleTacocantidadChange}
           />
         </div>
         <div>
           <label htmlFor="taco-to-go">To go:</label>
-          <input id="taco-to-go" type="checkbox" checked={tacoToGo} onChange={handleToGoChange} />
+          <input id="taco-to-go" type="checkbox" checked={tacopara_llevar} onChange={handlepara_llevarChange} />
         </div>
       </form>
       <div className="modal-actions">

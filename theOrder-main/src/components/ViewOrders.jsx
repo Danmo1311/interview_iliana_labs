@@ -21,9 +21,9 @@ const ViewOrders = ({ onClose, orders }) => {
               {orders.map((order, index) => (
                 <tr key={index}>
                   <td>{order.type}</td>
-                  <td>{order.quantity}</td>
-                  <td>{order.toGo ? 'Sí' : 'No'}</td>
-                  <td>{order.status}</td>
+                  <td>{order.cantidad}</td>
+                  <td>{order.para_llevar ? 'Sí' : 'No'}</td>
+                  <td>{order.estado}</td>
                 </tr>
               ))}
             </tbody>
