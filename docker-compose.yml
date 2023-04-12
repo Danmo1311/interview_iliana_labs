@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: ./app
+    image: restaurant-public-api
+    command: python main.py
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - .:/tmp/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=foo
