@@ -160,7 +160,7 @@ def cambiar_estado_pedido(id_pedido, estado):
     ).first():
         pedido.estado = str(estado.value)
         session.commit()
-        return pedido
+        return "su pedido ha sido cambiado a " + str(estado.value)
     else:
         return "el pedido no existe"
 
@@ -177,7 +177,7 @@ def cambiar_estado_pedido_producto(id_pedido, id_producto, estado):
             cambiado.append(pedido_producto)
             session.commit()
 
-    return pedido
+    return "su pedido ha sido cambiado a " + str(estado.value)
 
 
 def listar_restuarantes():
