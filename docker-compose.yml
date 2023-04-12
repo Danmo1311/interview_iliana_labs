@@ -20,5 +20,5 @@ services:
       - .:/tmp/data/
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=foo
